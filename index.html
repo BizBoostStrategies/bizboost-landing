@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BizBoost Strategies</title>
   <style>
     body {
@@ -36,6 +36,30 @@
       width: 150px;
       margin-bottom: 20px;
     }
+    form {
+      margin-top: 30px;
+    }
+    input[type="email"] {
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      width: 70%;
+      margin-right: 10px;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 11px 20px;
+      font-size: 16px;
+      background-color: #ee6c4d;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #d6553a;
+    }
   </style>
 </head>
 <body>
@@ -44,6 +68,21 @@
     <h1>BizBoost Strategies</h1>
     <p>We offer subscription-based digital products designed to help entrepreneurs and business owners grow faster.</p>
     <p>Join us for expert strategies, actionable insights, and monthly resources to accelerate your business success.</p>
+  
+    <form id="contactForm" onsubmit="handleSubmit(event)">
+      <input type="email" id="email" name="email" placeholder="Enter your email" required />
+      <button type="submit">Contact Me</button>
+    </form>
+
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault();
+        const email = document.getElementById('email').value;
+        alert(`Thank you! We will contact you at ${email}.`);
+        document.getElementById('email').value = '';
+        // To really collect data: connect to a backend, email service, or automated workflow!
+      }
+    </script>
   </div>
 </body>
 </html>
