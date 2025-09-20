@@ -9,96 +9,148 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 40px;
+      padding: 0;
       background: #f9f9f9;
       color: #333;
       line-height: 1.6;
-      text-align: center;
     }
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
+    .main-flex {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: stretch;
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 40px 0;
+      gap: 40px;
+    }
+    .left-content {
+      flex: 1 1 350px;
       background: #fff;
-      padding: 40px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 50px 36px 50px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
     }
-    h1 {
-      font-size: 2.5rem;
+    .left-content img {
+      width: 120px;
+      margin-bottom: 24px;
+    }
+    .left-content h1 {
+      font-size: 2.3rem;
+      text-align: left;
       margin-bottom: 20px;
       color: #222;
+      font-weight: bold;
     }
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
+    .left-content p {
+      text-align: left;
+      font-size: 1.14rem;
+      margin-bottom: 14px;
       color: #555;
     }
-    img {
-      width: 150px;
-      margin-bottom: 20px;
-    }
-    /* Contact Form Styling */
-    .contact-container {
-      max-width: 700px;
-      margin: 40px auto;
+    .right-content {
+      flex: 2 1 600px;
       background: #fff;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+      border-radius: 14px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 40px 24px 40px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 420px;
+      max-width: 700px;
+    }
+    .right-content h2 {
+      text-align: center;
+      margin-bottom: 18px;
+      font-size: 1.45rem;
+      font-weight: bold;
+      color: #0e3a6a;
+      letter-spacing: 1px;
+    }
+    .right-content .section-subtitle {
+      text-align: center;
+      margin-bottom: 16px;
+      font-size: 1.07rem;
+      color: #444;
+    }
+    .right-content iframe {
+      width: 98%;
+      min-width: 400px;
+      min-height: 800px;
+      max-width: 680px;
+      max-height: 1100px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 2px 18px rgba(30,64,175,0.08);
+      background: white;
     }
     .form-note {
       text-align: center;
-      margin-top: 16px;
+      margin-top: 14px;
       color: #888;
       font-size: 1rem;
     }
-    @media (max-width: 900px) {
-      .contact-container {
-        padding: 20px;
+    @media (max-width: 1050px) {
+      .main-flex {
+        flex-direction: column;
+        padding: 24px 0;
+        margin: 30px auto;
+        gap: 20px;
+      }
+      .left-content, .right-content {
+        max-width: 98vw;
+      }
+      .right-content iframe {
+        min-width: 240px;
       }
     }
-    @media (max-width: 600px) {
-      .container, .contact-container {
-        max-width: 99vw;
-        padding: 10px;
+    @media (max-width: 700px) {
+      .main-flex {
+        padding: 0;
+        gap: 0;
       }
-      h1 {
-        font-size: 2rem;
+      .left-content, .right-content {
+        padding: 22px 8px;
+        border-radius: 10px;
       }
-      img {
-        width: 100px;
+      .left-content h1 {
+        font-size: 1.25rem;
+      }
+      .right-content h2 {
+        font-size: 1.18rem;
+      }
+      .right-content iframe {
+        min-width: 180px;
+        min-height: 650px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="logo.png" alt="BizBoost Strategies Logo" />
-    <h1>BizBoost Strategies</h1>
-    <p>We orchestrate intelligent AI workflows that eliminate redundancies, automate operations, and unlock 10x efficiency for ambitious businesses.</p>
-    <p>Join us for expert strategies, actionable insights, and monthly resources to accelerate your business success.</p>
-  </div>
-
-  <!-- Contact Form Section with Microsoft Form Embed -->
-  <section id="contact" class="contact">
-    <div class="contact-container">
+  <div class="main-flex">
+    <div class="left-content">
+      <img src="logo.png" alt="BizBoost Strategies Logo" />
+      <h1>BizBoost Strategies</h1>
+      <p>We orchestrate intelligent AI workflows that eliminate redundancies, automate operations, and unlock 10x efficiency for ambitious businesses.</p>
+      <p>Join us for expert strategies, actionable insights, and monthly resources to accelerate your business success.</p>
+    </div>
+    <div class="right-content">
       <h2>Start Your AI Transformation Today</h2>
       <p class="section-subtitle">
         Tell us about your challenges and we'll show you exactly how AI can solve them.
       </p>
       <!-- Microsoft Form Embed -->
-      <iframe 
-        width="100%" 
-        height="750px"
+      <iframe
         src="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=0B9nViGDiE-Y12MAyO4F9a0_tKq4NI9Kn4miM1YhotFUQUlNUkJSUTNZVTIyV0lMWVFKVDFWSFRSNC4u&embed=true"
-        frameborder="0" 
-        marginwidth="0" 
-        marginheight="0" 
-        style="border: none; background: white; max-width:100%; max-height:100vh; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.1);" 
         allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen>
       </iframe>
       <p class="form-note">🔒 Your information is secure and will never be shared.</p>
     </div>
-  </section>
+  </div>
 </body>
 </html>
