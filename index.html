@@ -6,13 +6,23 @@
   <title>BizBoost Strategies | AI Automation Consulting</title>
   <meta name="description" content="BizBoost Strategies - AI Automation Consulting. We orchestrate intelligent workflows and eliminate manual tasks to 10x your business efficiency.">
   <style>
+    :root {
+      --navy: #15394D;
+      --teal: #237B7B;
+      --green: #7AC66C;
+      --orange: #E9853B;
+      --background: #FAFAF7;
+      --white: #FFF;
+      --grey: #F4F5F9;
+      --text-dark: #183039;
+    }
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--background);
       margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
+      color: var(--text-dark);
       line-height: 1.6;
+      min-height: 100vh;
     }
     .main-flex {
       display: flex;
@@ -26,14 +36,15 @@
     }
     .left-content {
       flex: 1 1 350px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      background: var(--white);
+      border-radius: 14px;
+      box-shadow: 0 4px 22px rgba(21, 57, 77, 0.10);
       padding: 50px 36px 50px 36px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
+      min-width: 320px;
     }
     .left-content img {
       width: 120px;
@@ -43,20 +54,21 @@
       font-size: 2.3rem;
       text-align: left;
       margin-bottom: 20px;
-      color: #222;
+      color: var(--navy);
       font-weight: bold;
+      letter-spacing: 1px;
     }
     .left-content p {
       text-align: left;
-      font-size: 1.14rem;
+      font-size: 1.15rem;
       margin-bottom: 14px;
-      color: #555;
+      color: #355a61;
     }
     .right-content {
       flex: 2 1 600px;
-      background: #fff;
+      background: var(--white);
       border-radius: 14px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 24px rgba(21, 57, 77, 0.08);
       padding: 40px 24px 40px 24px;
       display: flex;
       flex-direction: column;
@@ -69,31 +81,33 @@
       margin-bottom: 18px;
       font-size: 1.45rem;
       font-weight: bold;
-      color: #0e3a6a;
+      color: var(--teal);
       letter-spacing: 1px;
     }
     .right-content .section-subtitle {
       text-align: center;
       margin-bottom: 16px;
-      font-size: 1.07rem;
-      color: #444;
+      font-size: 1.08rem;
+      color: #355a61;
     }
     .right-content iframe {
       width: 98%;
       min-width: 400px;
-      min-height: 800px;
+      min-height: 820px;
       max-width: 680px;
       max-height: 1100px;
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 2px 18px rgba(30,64,175,0.08);
-      background: white;
+      border: 2px solid var(--teal);
+      border-radius: 12px;
+      box-shadow: 0 6px 22px rgba(35,123,123,0.11);
+      background: var(--white);
     }
     .form-note {
       text-align: center;
-      margin-top: 14px;
-      color: #888;
-      font-size: 1rem;
+      margin-top: 16px;
+      color: var(--orange);
+      font-size: 1.06rem;
+      font-weight: bold;
+      letter-spacing: 0.03em;
     }
     @media (max-width: 1050px) {
       .main-flex {
@@ -115,18 +129,18 @@
         gap: 0;
       }
       .left-content, .right-content {
-        padding: 22px 8px;
+        padding: 17px 6px;
         border-radius: 10px;
       }
       .left-content h1 {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
       }
       .right-content h2 {
-        font-size: 1.18rem;
+        font-size: 1.09rem;
       }
       .right-content iframe {
         min-width: 180px;
-        min-height: 650px;
+        min-height: 670px;
       }
     }
   </style>
@@ -134,7 +148,7 @@
 <body>
   <div class="main-flex">
     <div class="left-content">
-      <img src="logo.png" alt="BizBoost Strategies Logo" />
+      <img src="BBS-Logo.jpg" alt="BizBoost Strategies Logo" />
       <h1>BizBoost Strategies</h1>
       <p>We orchestrate intelligent AI workflows that eliminate redundancies, automate operations, and unlock 10x efficiency for ambitious businesses.</p>
       <p>Join us for expert strategies, actionable insights, and monthly resources to accelerate your business success.</p>
