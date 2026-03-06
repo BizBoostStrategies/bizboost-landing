@@ -92,17 +92,6 @@
       font-size: 1.08rem;
       color: #355a61;
     }
-    .right-content iframe {
-      width: 98%;
-      min-width: 400px;
-      min-height: 820px;
-      max-width: 680px;
-      max-height: 1300px;
-      border: 2px solid var(--teal);
-      border-radius: 12px;
-      box-shadow: 0 6px 22px rgba(35,123,123,0.11);
-      background: var(--white);
-    }
     .form-note {
       text-align: center;
       margin-top: 16px;
@@ -181,28 +170,31 @@
     /* Microsoft Forms footer crop */
     .form-wrapper {
       width: 100%;
-      height: 900px;
+      height: 920px;
       overflow: hidden;
       position: relative;
       margin: 0 auto;
-      margin-bottom: -130px;
+      border: 2px solid var(--teal);
+      border-radius: 12px;
+      box-shadow: 0 6px 22px rgba(35,123,123,0.11);
+      background: var(--white);
     }
     .form-wrapper iframe {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 1500px;
+      height: 1120px;
       border: none;
     }
     /* Responsive adjustments */
     @media (max-width: 768px) {
-      .form-wrapper { height: 800px; }
-      .form-wrapper iframe { height: 1400px; }
+      .form-wrapper { height: 850px; }
+      .form-wrapper iframe { height: 1050px; }
     }
     @media (max-width: 480px) {
-      .form-wrapper { height: 700px; }
-      .form-wrapper iframe { height: 1300px; }
+      .form-wrapper { height: 800px; }
+      .form-wrapper iframe { height: 1000px; }
     }
   </style>
 </head>
@@ -262,3 +254,4 @@
   </footer>
 </body>
 </html>
+
