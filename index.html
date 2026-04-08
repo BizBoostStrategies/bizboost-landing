@@ -1,271 +1,473 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BizBoost Strategies | Quality Improvement Resources for Early Learning Programs</title>
-  <meta name="description" content="BizBoost Strategies develops activity plans for Texas Rising Star–certified child care programs. Supporting assessment readiness and higher star ratings across all age groups.">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BizBoost Strategies | TRS-Aligned Activities for Texas Child Care Programs</title>
+  <meta name="description" content="ECAB delivers daily TRS-aligned classroom activities to Texas child care programs. Age-specific, teacher-ready, built to 4-Star standards. Plans from $59/month.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy: #15394D;
-      --teal: #237B7B;
-      --green: #7AC66C;
-      --orange: #E9853B;
-      --background: #FAFAF7;
-      --white: #FFF;
-      --grey: #F4F5F9;
-      --text-dark: #183039;
+      --navy:#111e30;--navy-mid:#15394d;--navy-light:#1e3a52;
+      --teal:#1e7d7a;--teal-mid:#237b7b;--teal-light:#4fb8c8;
+      --teal-pale:#e8f5f5;--teal-border:#b8d8dc;
+      --amber:#e8a838;--rust:#c8553a;
+      --bg:#fafaf7;--white:#ffffff;--surface:#f0f4f5;
+      --divider:#dde5e6;--text:#183039;--text-mid:#355a61;--text-muted:#6b7b85;
+      --font-display:'DM Serif Display',Georgia,serif;
+      --font-body:'Inter','Segoe UI',sans-serif;
     }
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: var(--background);
-      margin: 0;
-      color: var(--text-dark);
-      line-height: 1.6;
-      min-height: 100vh;
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:74px;-webkit-font-smoothing:antialiased}
+    body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6}
+    img{display:block;max-width:100%;height:auto}
+    a{transition:color .18s ease,opacity .18s ease}
+
+    .container{max-width:1100px;margin:0 auto;padding:0 28px}
+    .sec{padding:72px 0}
+    .sec-t{background:var(--surface)}
+
+    .sl{font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:1.8px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+    .sl::after{content:'';width:36px;height:1px;background:var(--teal-border)}
+    .sh{font-family:var(--font-display);font-size:clamp(1.65rem,3vw,2.25rem);color:var(--navy-mid);line-height:1.2;margin-bottom:8px}
+    .ss{font-size:15.5px;color:var(--text-muted);max-width:580px;line-height:1.7}
+
+    /* NAVBAR */
+    .nb{position:sticky;top:0;z-index:100;background:var(--navy-mid);box-shadow:0 2px 18px rgba(0,0,0,.25)}
+    .nb-in{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:10px 28px}
+    .nb-logo{height:40px;background:white;border-radius:6px;padding:3px 6px}
+    .nb nav{display:flex;align-items:center;gap:4px}
+    .nb nav a{color:rgba(255,255,255,.72);text-decoration:none;font-weight:500;font-size:13px;padding:7px 12px;border-radius:6px}
+    .nb nav a:hover{color:#fff;background:rgba(255,255,255,.10)}
+    .nb-cta{background:linear-gradient(135deg,var(--teal),var(--teal-mid))!important;color:#fff!important;font-weight:600!important;box-shadow:0 2px 10px rgba(30,125,122,.38)!important}
+    .nb-cta:hover{opacity:.9!important}
+
+    /* HERO */
+    .hero{background:linear-gradient(150deg,var(--navy) 0%,var(--navy-mid) 50%,#1a3f56 100%);color:#fff;padding:78px 0 68px;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 88% 48%,rgba(30,125,122,.22) 0%,transparent 68%);pointer-events:none}
+    .hero-in{max-width:1100px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:1fr 195px;gap:44px;align-items:center}
+    .hero-ey{font-size:11px;font-weight:700;color:var(--teal-light);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px}
+    .hero h1{font-family:var(--font-display);font-size:clamp(2rem,4.5vw,3rem);line-height:1.14;color:#fff;margin-bottom:16px}
+    .hero h1 span{color:var(--teal-light)}
+    .hero-sub{font-size:16px;color:rgba(255,255,255,.68);max-width:530px;line-height:1.72;margin-bottom:28px}
+    .hero-act{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;text-decoration:none;font-weight:600;font-size:14px;padding:11px 22px;border-radius:6px;border:none;cursor:pointer;transition:opacity .18s ease,box-shadow .18s ease}
+    .btn-p{background:linear-gradient(135deg,var(--teal),var(--teal-mid));color:#fff;box-shadow:0 4px 16px rgba(30,125,122,.38)}
+    .btn-p:hover{opacity:.88}
+    .btn-g{border:1.5px solid rgba(255,255,255,.32);color:rgba(255,255,255,.82);background:transparent}
+    .btn-g:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.58);color:#fff}
+    .hb{display:flex;flex-direction:column;gap:10px}
+    .hb-it{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:13px 15px;text-align:center}
+    .hb-n{font-family:var(--font-display);font-size:28px;color:var(--teal-light);line-height:1}
+    .hb-l{font-size:9px;color:rgba(255,255,255,.48);text-transform:uppercase;letter-spacing:1px;margin-top:4px;line-height:1.4}
+
+    /* CHALLENGE */
+    .chal{background:#fdf6f2;border-top:3px solid var(--rust);padding:26px 0}
+    .chal-in{max-width:1100px;margin:0 auto;padding:0 28px;display:flex;gap:16px;align-items:flex-start}
+    .chal-ic{width:34px;height:34px;border-radius:50%;background:var(--rust);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .chal-ic svg{width:17px;height:17px;fill:none;stroke:white;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .chal-tag{font-size:10px;font-weight:700;color:var(--rust);text-transform:uppercase;letter-spacing:1.4px;margin-bottom:5px}
+    .chal p{font-size:14.5px;line-height:1.68;color:var(--text-mid)}
+
+    /* SOLUTION */
+    .sol-g{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:start;margin-top:28px}
+    .fl{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:12px}
+    .fl li{font-size:14px;line-height:1.56;color:var(--text-mid);padding:10px 14px 10px 42px;position:relative;background:var(--white);border:1px solid var(--divider);border-radius:7px;box-shadow:0 1px 3px rgba(17,30,48,.05)}
+    .fl li::before{content:'';position:absolute;left:13px;top:50%;transform:translateY(-50%);width:18px;height:18px;border-radius:50%;background:var(--teal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18'%3E%3Cpath d='M4 9l3.5 3.5L14 6' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/18px no-repeat}
+    .fl li strong{color:var(--text);font-weight:600}
+    .age-card{background:var(--teal-pale);border:1px solid var(--teal-border);border-radius:14px;padding:18px}
+    .act{font-size:10px;font-weight:700;color:var(--navy-mid);text-transform:uppercase;letter-spacing:1px;text-align:center;margin-bottom:11px;padding-bottom:10px;border-bottom:1px solid var(--teal-border)}
+    .ai{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(184,216,220,.4)}
+    .ai:last-child{border-bottom:none}
+    .ad{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+    .d1{background:#1a7a6e}.d2{background:#237b7b}.d3{background:var(--amber)}.d4{background:var(--rust)}
+    .an{font-size:14px;font-weight:600;color:var(--text)}
+    .ar{font-size:12px;color:var(--text-muted);margin-left:auto}
+    .sb{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);border-radius:10px;padding:14px;margin-top:11px;text-align:center}
+    .stars{font-size:17px;color:var(--amber);letter-spacing:4px}
+    .st{font-size:11.5px;color:rgba(255,255,255,.5);margin-top:5px;line-height:1.5}
+    .st strong{color:var(--teal-light)}
+    .themes{display:flex;gap:7px;flex-wrap:wrap;margin-top:16px}
+    .tc{background:var(--white);border:1px solid var(--divider);border-radius:20px;padding:5px 14px;font-size:12.5px;color:var(--text-mid);font-weight:500}
+
+    /* TRS */
+    .trs-box{background:var(--white);border:1px solid var(--teal-border);border-radius:14px;padding:26px 30px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;box-shadow:0 4px 18px rgba(17,30,48,.08)}
+    .trs-box p{font-size:15px;line-height:1.7;color:var(--text-mid);margin-top:8px}
+    .trs-box p strong{color:var(--text);font-weight:600}
+    .c2b{background:linear-gradient(135deg,var(--teal),var(--teal-mid));border-radius:10px;padding:18px 20px;text-align:center;flex-shrink:0;min-width:105px;box-shadow:0 6px 20px rgba(30,125,122,.28)}
+    .c2l{font-size:9px;color:rgba(255,255,255,.58);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+    .c2p{font-family:var(--font-display);font-size:46px;color:#fff;line-height:1}
+    .c2s{font-size:9px;color:rgba(255,255,255,.56);margin-top:4px}
+
+    /* HOW */
+    .how-g{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+    .step{background:var(--white);border:1px solid var(--divider);border-radius:13px;padding:26px 20px;text-align:center;box-shadow:0 2px 8px rgba(17,30,48,.06);position:relative}
+    .step:not(:last-child)::after{content:'›';position:absolute;right:-12px;top:50%;transform:translateY(-50%);font-size:22px;color:var(--teal);font-weight:700;z-index:1}
+    .si{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--teal-pale),#d4eef0);border:1px solid var(--teal-border);display:inline-flex;align-items:center;justify-content:center;margin:0 auto 13px}
+    .si svg{width:20px;height:20px;stroke:var(--teal);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .step h3{font-size:14.5px;font-weight:700;color:var(--text);margin-bottom:7px}
+    .step p{font-size:13px;color:var(--text-muted);line-height:1.56}
+
+    /* PRICING */
+    .pr-g{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+    .pc{background:var(--white);border:1px solid var(--divider);border-radius:13px;padding:24px 18px 20px;text-align:center;position:relative;box-shadow:0 2px 8px rgba(17,30,48,.06);transition:box-shadow .2s ease}
+    .pc:hover{box-shadow:0 6px 22px rgba(17,30,48,.11)}
+    .pc-f{border-color:var(--teal);background:#f0fafa;box-shadow:0 4px 18px rgba(30,125,122,.13)}
+    .pb{position:absolute;top:-1px;right:12px;background:linear-gradient(135deg,var(--teal),var(--teal-mid));color:#fff;font-size:9px;font-weight:700;padding:3px 9px;border-radius:0 0 7px 7px;text-transform:uppercase;letter-spacing:.6px}
+    .pa{font-family:var(--font-display);font-size:40px;color:var(--teal);line-height:1;margin-bottom:2px}
+    .pp{font-size:12.5px;color:var(--text-muted)}
+    .pt{font-size:14.5px;font-weight:700;color:var(--text);margin:9px 0 5px}
+    .pn{font-size:12px;color:var(--text-muted);line-height:1.58;padding-top:9px;border-top:1px solid var(--divider)}
+    .pv{font-size:11.5px;color:var(--teal);font-weight:600;margin-top:8px}
+    .pf{font-family:var(--font-display);font-size:22px;color:var(--text-muted);line-height:1;margin-bottom:2px}
+
+    /* FORM SECTION */
+    .fs{background:var(--navy-mid);padding:70px 0}
+    .fi{max-width:1100px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:start}
+    .fi .sl{color:var(--teal-light)}
+    .fi .sl::after{background:rgba(79,184,200,.3)}
+    .fi .sh{color:#fff}
+    .fi .ss{color:rgba(255,255,255,.60);margin-top:8px}
+    .ff{margin-top:26px;display:flex;flex-direction:column;gap:14px}
+    .ff-it{display:flex;align-items:flex-start;gap:12px}
+    .ff-ic{width:30px;height:30px;border-radius:50%;flex-shrink:0;background:rgba(79,184,200,.14);border:1px solid rgba(79,184,200,.24);display:flex;align-items:center;justify-content:center}
+    .ff-ic svg{width:14px;height:14px;stroke:var(--teal-light);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .ff-tx strong{display:block;font-size:13px;font-weight:600;color:rgba(255,255,255,.88);margin-bottom:2px}
+    .ff-tx span{font-size:12px;color:rgba(255,255,255,.46);line-height:1.5}
+    .fw{width:100%;height:870px;overflow:hidden;position:relative;border:1.5px solid rgba(79,184,200,.28);border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.28);background:var(--white)}
+    .fw iframe{position:absolute;top:0;left:0;width:100%;height:1120px;border:none}
+    .fsec{margin-top:9px;font-size:11.5px;color:rgba(255,255,255,.38);display:flex;align-items:center;gap:6px;justify-content:center}
+    .fsec svg{width:12px;height:12px;stroke:rgba(255,255,255,.38);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+    /* ABOUT */
+    .ab-in{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+    .ab-card{background:var(--white);border:1px solid var(--divider);border-radius:13px;padding:26px;box-shadow:0 2px 10px rgba(17,30,48,.06)}
+    .ab-card p{font-size:15px;color:var(--text-mid);line-height:1.72}
+    .cb{background:var(--teal-pale);border:1px solid var(--teal-border);border-radius:12px;padding:22px;text-align:center;margin-top:18px}
+    .cb h4{font-size:13.5px;font-weight:700;color:var(--teal);margin-bottom:6px}
+    .cb p{font-size:12.5px;color:var(--text-muted);line-height:1.55;margin-bottom:13px}
+    .cb a{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:8px 18px;border-radius:6px;transition:background .18s ease}
+    .cb a:hover{background:var(--teal-mid)}
+    .ab-stats{display:flex;flex-direction:column;gap:14px}
+    .si2{background:var(--white);border:1px solid var(--divider);border-radius:10px;padding:16px 18px;display:flex;align-items:center;gap:14px;box-shadow:0 1px 4px rgba(17,30,48,.05)}
+    .si2-n{font-family:var(--font-display);font-size:30px;color:var(--teal);line-height:1;min-width:56px}
+    .si2-l{font-size:12.5px;color:var(--text-muted);line-height:1.5}
+
+    /* FOOTER */
+    .foot{background:var(--navy);padding:30px 0}
+    .foot-in{max-width:1100px;margin:0 auto;padding:0 28px;display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
+    .fd{font-size:10.5px;line-height:1.62;color:rgba(255,255,255,.30);max-width:58%}
+    .fb{text-align:right;flex-shrink:0}
+    .fb strong{display:block;font-size:13px;color:#fff;margin-bottom:4px}
+    .fb a{font-size:12px;color:var(--teal-light);text-decoration:none;display:block;line-height:1.85}
+    .fb a:hover{text-decoration:underline}
+    .fc{font-size:10px;color:rgba(255,255,255,.22);margin-top:6px}
+
+    /* RESPONSIVE */
+    @media(max-width:920px){
+      .hero-in{grid-template-columns:1fr}.hb{flex-direction:row}
+      .sol-g{grid-template-columns:1fr}.trs-box{grid-template-columns:1fr}
+      .fi{grid-template-columns:1fr}.ab-in{grid-template-columns:1fr}
+      .foot-in{flex-direction:column;gap:18px}.fd{max-width:100%}.fb{text-align:left}
     }
-    .main-flex {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: stretch;
-      max-width: 1200px;
-      margin: 60px auto;
-      padding: 40px 0;
-      gap: 40px;
+    @media(max-width:700px){
+      .how-g{grid-template-columns:1fr}.pr-g{grid-template-columns:1fr}
+      .step:not(:last-child)::after{display:none}
+      .hero{padding:50px 0 44px}.sec{padding:46px 0}
+      .fw{height:820px}.fw iframe{height:1060px}
+      .nb nav a:not(.nb-cta){display:none}
     }
-    .left-content {
-      flex: 1 1 350px;
-      background: var(--white);
-      border-radius: 14px;
-      box-shadow: 0 4px 22px rgba(21, 57, 77, 0.10);
-      padding: 40px 36px 50px 36px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      min-width: 320px;
-    }
-    .left-content img {
-      width: 140px;
-      margin-bottom: 24px;
-      margin-top: 0;
-    }
-    .left-content h1 {
-      font-size: 2.3rem;
-      text-align: left;
-      margin-bottom: 20px;
-      margin-top: 0;
-      color: var(--navy);
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-    .left-content p {
-      text-align: left;
-      font-size: 1.15rem;
-      margin-bottom: 14px;
-      color: #355a61;
-    }
-    .right-content {
-      flex: 2 1 600px;
-      background: var(--white);
-      border-radius: 14px;
-      box-shadow: 0 4px 24px rgba(21, 57, 77, 0.08);
-      padding: 40px 24px 40px 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-width: 420px;
-      max-width: 700px;
-    }
-    .right-content h2 {
-      text-align: center;
-      margin-bottom: 18px;
-      margin-top: 0;
-      font-size: 1.45rem;
-      font-weight: bold;
-      color: var(--teal);
-      letter-spacing: 1px;
-    }
-    .right-content .section-subtitle {
-      text-align: center;
-      margin-bottom: 16px;
-      font-size: 1.08rem;
-      color: #355a61;
-    }
-    .form-note {
-      text-align: center;
-      margin-top: 16px;
-      color: var(--orange);
-      font-size: 1.06rem;
-      font-weight: bold;
-      letter-spacing: 0.03em;
-    }
-    /* Navigation Bar */
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 18px 36px 12px 36px;
-    }
-    .navbar img {
-      height: 48px;
-    }
-    .navbar nav a {
-      color: var(--navy);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      margin-left: 28px;
-      letter-spacing: 0.5px;
-      transition: color 0.2s;
-    }
-    .navbar nav a:hover {
-      color: var(--teal);
-    }
-    @media (max-width: 1050px) {
-      .main-flex {
-        flex-direction: column;
-        padding: 24px 0;
-        margin: 30px auto;
-        gap: 20px;
-      }
-      .left-content, .right-content {
-        max-width: 98vw;
-      }
-      .right-content iframe {
-        min-width: 240px;
-      }
-    }
-    @media (max-width: 700px) {
-      .main-flex {
-        padding: 0;
-        gap: 0;
-      }
-      .left-content, .right-content {
-        padding: 17px 6px;
-        border-radius: 10px;
-      }
-      .left-content h1 {
-        font-size: 1.2rem;
-      }
-      .right-content h2 {
-        font-size: 1.09rem;
-      }
-      .right-content iframe {
-        min-width: 180px;
-        min-height: 670px;
-      }
-      .navbar {
-        padding: 12px 10px;
-        flex-direction: column;
-        gap: 10px;
-      }
-      .navbar nav a {
-        margin-left: 12px;
-        font-size: 0.92rem;
-      }
-    }
-    /* Microsoft Forms footer crop */
-    .form-wrapper {
-      width: 100%;
-      height: 870px;
-      overflow: hidden;
-      position: relative;
-      margin: 0 auto;
-      border: 2px solid var(--teal);
-      border-radius: 12px;
-      box-shadow: 0 6px 22px rgba(35,123,123,0.11);
-      background: var(--white);
-    }
-    .form-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 1120px;
-      border: none;
-    }
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .form-wrapper { height: 850px; }
-      .form-wrapper iframe { height: 1050px; }
-    }
-    @media (max-width: 480px) {
-      .form-wrapper { height: 800px; }
-      .form-wrapper iframe { height: 1000px; }
+    @media(max-width:480px){
+      .hero h1{font-size:1.82rem}.container,.hero-in,.fi,.foot-in{padding-left:16px;padding-right:16px}
     }
   </style>
 </head>
 <body>
-  <div class="navbar">
-    <img src="logo.png" alt="BizBoost Strategies" />
+
+<!-- NAVBAR -->
+<div class="nb">
+  <div class="nb-in">
+    <a href="#" style="display:flex;align-items:center"><svg width="130" height="40" viewBox="0 0 130 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="BizBoost Strategies" style="height:38px;width:auto">
+  <!-- Chart icon with gradient circuit nodes -->
+  <defs>
+    <linearGradient id="g1" x1="0" y1="36" x2="30" y2="4" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e8a838"/>
+      <stop offset="35%" stop-color="#4fb8a8"/>
+      <stop offset="100%" stop-color="#15394d"/>
+    </linearGradient>
+  </defs>
+  <!-- Rising bar chart lines -->
+  <path d="M6 34 L6 26 M12 34 L12 20 M18 34 L18 14 M24 34 L24 8" stroke="url(#g1)" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- Arrow up-right -->
+  <path d="M6 28 L24 10 L28 14" stroke="url(#g1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Circuit nodes -->
+  <circle cx="4" cy="34" r="2" fill="#e8a838"/>
+  <circle cx="10" cy="28" r="2" fill="#7ac8b0"/>
+  <circle cx="16" cy="18" r="2" fill="#4fb8a8"/>
+  <circle cx="26" cy="10" r="2" fill="#1e7d7a"/>
+  <!-- Horizontal tick lines -->
+  <line x1="0" y1="34" x2="4" y2="34" stroke="#e8a838" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="2" y1="28" x2="8" y2="28" stroke="#7ac8b0" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Company name -->
+  <text x="36" y="22" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="800" fill="#15394d" letter-spacing="0.3">BIZBOOST</text>
+  <text x="36" y="34" font-family="Inter, Segoe UI, sans-serif" font-size="8" font-weight="600" fill="#355a61" letter-spacing="1.5">STRATEGIES</text>
+</svg></a>
     <nav>
-      <a href="#trs">Early Childhood Activity Booster (ECAB)</a>
+      <a href="#ecab">ECAB</a>
+      <a href="#how">How It Works</a>
+      <a href="#pricing">Pricing</a>
       <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="#get-started" class="nb-cta">Get Free Sample</a>
     </nav>
   </div>
-  <div class="main-flex">
-    <div class="left-content">
-      <img src="logo.png" alt="BizBoost Strategies Logo" />
-      <h1>Quality Improvement Resources for Texas Child Care Programs</h1>
-      <p>Ready-to-use, age-specific activities aligned with Texas Rising Star assessment standards. Developed using TRS assessment standards and evidence-based early childhood education practices. All activities built to 4-Star certification standards.</p>
-      <p>Serving Infant, Toddler, Pre-K, and School-Age classrooms across Texas.</p>
-<!-- Consultation CTA -->
-<div style="margin-top: 24px; width: 100%; background-color: #f0faf8; border: 1px solid #c8e6e0; border-radius: 10px; padding: 18px 20px; text-align: center;">
-  <p style="font-size: 1rem; color: var(--teal); font-weight: 700; margin: 0 0 8px 0;">💬 Have Other Questions?</p>
-  <p style="font-size: 0.93rem; color: #555; margin: 0 0 12px 0; line-height: 1.5;">For consultation-related inquiries, reach out to our team directly. We typically respond within 48 hours.</p>
-  <a href="mailto:support@bizbooststrategy.com" style="display: inline-block; background-color: var(--teal); color: #fff; text-decoration: none; font-size: 0.93rem; font-weight: 600; padding: 9px 20px; border-radius: 6px;">📧 support@bizbooststrategy.com</a>
 </div>
-    </div>
-    <div class="right-content">
-      <h2>Request a Free Sample Activity</h2>
-      <p class="section-subtitle">See how our TRS-aligned activities can support your program. No commitment required.</p>
-      <div class="form-wrapper">
-        <iframe width="640px" height="480px" 
-  src="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=0B9nViGDiE-Y12MAyO4F9a0_tKq4NI9Kn4miM1YhotFUOEhCNjZQOU0xWk9FVUIwSFlGMEJDV05PWS4u&embed=true" 
-  frameborder="0" marginwidth="0" marginheight="0" 
-  style="border: none; max-width:100%; max-height:100vh" 
-  allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen>
-</iframe>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-in">
+    <div>
+      <div class="hero-ey">Early Childhood Activity Booster &mdash; ECAB</div>
+      <h1>Daily TRS-Aligned Activities,<br><span>Delivered Every Weekday</span></h1>
+      <p class="hero-sub">Practical, classroom-ready activities for Texas Rising Star programs. Age-specific, teacher-ready, built to 4-Star certification standards &mdash; delivered straight to your inbox.</p>
+      <div class="hero-act">
+        <a href="#get-started" class="btn btn-p">Get Free Sample Activities</a>
+        <a href="#pricing" class="btn btn-g">View Pricing</a>
       </div>
-      <div class="form-note">🔒 Your information is secure and will never be shared.</div>
+    </div>
+    <div class="hb">
+      <div class="hb-it">
+        <div class="hb-n">40%</div>
+        <div class="hb-l">of TRS Score<br>Category 2</div>
+      </div>
+      <div class="hb-it">
+        <div class="hb-n">4</div>
+        <div class="hb-l">Age Groups<br>Served</div>
+      </div>
+      <div class="hb-it">
+        <div class="hb-n">&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="hb-l">4-Star<br>Standard</div>
+      </div>
     </div>
   </div>
-  <section id="trs" style="max-width:900px;margin:40px auto;padding:0 24px;">
-    <h2 style="text-align:center;color:var(--navy);font-size:2rem;margin-bottom:32px;">How It Works</h2>
-    <div style="display:flex;flex-wrap:wrap;gap:24px;justify-content:center;">
-      <div style="flex:1 1 240px;max-width:280px;background:var(--white);border-radius:12px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.07);text-align:center;">
-        <div style="font-size:2.5rem;margin-bottom:12px;">📋</div>
-        <h3 style="color:var(--teal);margin-bottom:8px;">1. Request a Sample</h3>
-        <p style="color:#555;font-size:0.95rem;">Fill out the form above with your center details and age groups. It takes less than 2 minutes.</p>
+</section>
+
+<!-- CHALLENGE BAR -->
+<div class="chal">
+  <div class="chal-in">
+    <div class="chal-ic">
+      <svg viewBox="0 0 24 24"><path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+    </div>
+    <div>
+      <div class="chal-tag">Director&rsquo;s Daily Challenge</div>
+      <p>Child care directors managing TRS certification face a persistent gap: translating assessment standards into daily classroom activities. Teachers need ready-to-use, age-specific resources that directly support the practices TRS assessors evaluate &mdash; but creating these materials in-house requires expertise most programs don&rsquo;t have on staff.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SOLUTION -->
+<section id="ecab" class="sec">
+  <div class="container">
+    <div class="sl">ECAB Solution</div>
+    <h2 class="sh">Everything Your Teachers Need,<br>Ready Before Class Starts</h2>
+    <div class="sol-g">
+      <div>
+        <p class="ss">ECAB delivers practical, classroom-ready activities aligned with Texas Rising Star assessment standards. Each activity is designed to be immediately usable:</p>
+        <ul class="fl">
+          <li><strong>Age-Specific</strong> &mdash; Designed for each developmental stage with appropriate complexity, materials, and teaching strategies</li>
+          <li><strong>Standards-Aligned</strong> &mdash; Mapped to TRS Classroom Assessment categories with primary and secondary indicator coverage</li>
+          <li><strong>Teacher-Friendly</strong> &mdash; Step-by-step teaching scripts, materials lists, safety notes, and portfolio documentation guidance</li>
+          <li><strong>4-Star Standard</strong> &mdash; All activities developed to meet the highest TRS certification level, supporting quality improvement at every stage</li>
+        </ul>
+        <div class="themes">
+          <div class="tc">&#128300; STEM</div>
+          <div class="tc">&#127912; Creative Arts</div>
+          <div class="tc">&#128155; Social-Emotional</div>
+          <div class="tc">&#128214; Language &amp; Literacy</div>
+          <div class="tc">&#127939; Physical Development</div>
+          <div class="tc">&#127807; Life Skills</div>
+        </div>
       </div>
-      <div style="flex:1 1 240px;max-width:280px;background:var(--white);border-radius:12px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.07);text-align:center;">
-        <div style="font-size:2.5rem;margin-bottom:12px;">📬</div>
-        <h3 style="color:var(--teal);margin-bottom:8px;">2. Receive Your Activity</h3>
-        <p style="color:#555;font-size:0.95rem;">We send you a ready-to-use sample activity tailored to your selected age group, complete with teacher scripts and materials list.</p>
-      </div>
-      <div style="flex:1 1 240px;max-width:280px;background:var(--white);border-radius:12px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.07);text-align:center;">
-        <div style="font-size:2.5rem;margin-bottom:12px;">⭐</div>
-        <h3 style="color:var(--teal);margin-bottom:8px;">3. Try It in Your Classroom</h3>
-        <p style="color:#555;font-size:0.95rem;">Use the activity with your teachers. See how it aligns with TRS assessment standards and supports your quality goals.</p>
+      <div>
+        <div class="age-card">
+          <div class="act">Age Groups Served</div>
+          <div class="ai"><div class="ad d1"></div><span class="an">Infant</span><span class="ar">0&ndash;17 months</span></div>
+          <div class="ai"><div class="ad d2"></div><span class="an">Toddler</span><span class="ar">18&ndash;35 months</span></div>
+          <div class="ai"><div class="ad d3"></div><span class="an">Pre-K</span><span class="ar">3&ndash;5 years</span></div>
+          <div class="ai"><div class="ad d4"></div><span class="an">School-Age</span><span class="ar">5&ndash;12 years</span></div>
+        </div>
+        <div class="sb">
+          <div class="stars">&#9733; &#9733; &#9733; &#9733;</div>
+          <div class="st">All activities designed to<br><strong>4-Star Certification Standards</strong></div>
+        </div>
       </div>
     </div>
-  </section>
-  <section id="about" style="max-width:900px;margin:40px auto;padding:0 24px;">
-    <h2 style="text-align:center;color:var(--navy);font-size:2rem;margin-bottom:16px;">About BizBoost Strategies</h2>
-    <p style="text-align:center;color:#555;max-width:700px;margin:0 auto;line-height:1.7;font-size:1rem;">BizBoost Strategies is a Texas-based quality improvement resource company. We develop practical, classroom-ready materials designed to support child care programs participating in the Texas Rising Star program. Our activities are developed by early childhood and assessment specialists with decades of combined experience in child development, program quality, and TRS certification standards.</p>
-  </section>
-  <footer id="contact" style="background:var(--navy);color:var(--white);text-align:center;padding:32px 24px;margin-top:48px;">
-    <p style="margin-bottom:12px;font-size:1rem;">Have questions? Contact us at <a href="mailto:support@bizbooststrategy.com" style="color:var(--green);text-decoration:underline;">support@bizbooststrategy.com</a></p>
-    <p style="font-size:0.8rem;color:#aaa;max-width:700px;margin:16px auto 0;line-height:1.5;">Disclaimer: BizBoost Strategies is an independent resource provider and is not affiliated with, endorsed by, or partnered with the Texas Workforce Commission, Texas Rising Star, or any Texas state agency. Activities are developed using publicly available TRS assessment standards and AI-assisted content generation with professional review. Our resources are designed to support programs in their quality improvement efforts but do not guarantee specific assessment outcomes or certification results.</p>
-    <p style="font-size:0.8rem;color:#aaa;margin-top:16px;">© 2026 BizBoost Strategies. All rights reserved.</p>
-  </footer>
+  </div>
+</section>
+
+<!-- TRS ALIGNMENT -->
+<section class="sec sec-t">
+  <div class="container">
+    <div class="sl">TRS Assessment Alignment</div>
+    <div class="trs-box">
+      <div>
+        <h3 style="font-family:var(--font-display);font-size:1.35rem;color:var(--navy-mid);margin-bottom:8px;">Targeting What Moves Your Score</h3>
+        <p>Activities are developed using publicly available TRS assessment standards and evidence-based early childhood education practices. Coverage spans all four TRS assessment categories, with particular depth in <strong>Category 2: Teacher-Child Interactions</strong> &mdash; weighted at 40% of the overall TRS score.</p>
+      </div>
+      <div class="c2b">
+        <div class="c2l">Category 2</div>
+        <div class="c2p">40%</div>
+        <div class="c2s">of TRS Score</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="sec">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="sl" style="justify-content:center;">How It Works</div>
+      <h2 class="sh" style="text-align:center;">Up and Running in Minutes</h2>
+    </div>
+    <div class="how-g">
+      <div class="step">
+        <div class="si"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></div>
+        <h3>1. Sign Up</h3>
+        <p>Enroll online in minutes &mdash; select your age groups and activate your center</p>
+      </div>
+      <div class="step">
+        <div class="si"><svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+        <h3>2. Receive</h3>
+        <p>Activities delivered to your inbox every weekday morning, ready for your teachers</p>
+      </div>
+      <div class="step">
+        <div class="si"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <h3>3. Implement</h3>
+        <p>Teachers follow step-by-step scripts; built-in documentation supports quality improvement</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="sec sec-t">
+  <div class="container">
+    <div class="sl">Pricing</div>
+    <h2 class="sh">Simple, Transparent Pricing</h2>
+    <p class="ss" style="margin-top:6px;">No contracts. No surprises. Cancel anytime.</p>
+    <div class="pr-g">
+      <div class="pc">
+        <div class="pa">$59</div>
+        <div class="pp">/month</div>
+        <div class="pt">Small Center</div>
+        <div class="pn">Up to 40 licensed children<br>All 4 age tracks &middot; Daily delivery</div>
+        <div class="pv">&#8776;&nbsp;$1.47/day for your whole center</div>
+      </div>
+      <div class="pc pc-f">
+        <div class="pb">Most Popular</div>
+        <div class="pa">$199</div>
+        <div class="pp">/month</div>
+        <div class="pt">Large Center</div>
+        <div class="pn">41+ licensed children<br>All 4 age tracks &middot; Daily delivery</div>
+        <div class="pv">&#8776;&nbsp;$4.98/day, any size center</div>
+      </div>
+      <div class="pc">
+        <div class="pf">FREE</div>
+        <div class="pp">&nbsp;</div>
+        <div class="pt">Try It Free</div>
+        <div class="pn">No commitment required<br>Sample pack &middot; One age group of your choice</div>
+        <div class="pv">No credit card needed</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GET STARTED / FORM -->
+<section id="get-started" class="fs">
+  <div class="fi">
+    <div>
+      <div class="sl">Get Started Free</div>
+      <h2 class="sh">Request a Free Sample Activity</h2>
+      <p class="ss">See how our TRS-aligned activities can support your program. No commitment required.</p>
+      <div class="ff">
+        <div class="ff-it">
+          <div class="ff-ic"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="ff-tx"><strong>Instant delivery</strong><span>Sample activity sent within 24 hours</span></div>
+        </div>
+        <div class="ff-it">
+          <div class="ff-ic"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+          <div class="ff-tx"><strong>Tailored to your center</strong><span>Choose your age group, receive a relevant activity</span></div>
+        </div>
+        <div class="ff-it">
+          <div class="ff-ic"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+          <div class="ff-tx"><strong>Zero obligation</strong><span>No credit card, no contract, no pressure</span></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="fw">
+        <iframe src="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=0B9nViGDiE-Y12MAyO4F9a0_tKq4NI9Kn4miM1YhotFUOEhCNjZQOU0xWk9FVUIwSFlGMEJDV05PWS4u&embed=true"
+          frameborder="0" marginwidth="0" marginheight="0"
+          style="border:none;max-width:100%;max-height:100vh"
+          allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen
+          title="Request a Free Sample Activity"></iframe>
+      </div>
+      <div class="fsec">
+        <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        Your information is secure and will never be shared.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="sec">
+  <div class="container">
+    <div class="ab-in">
+      <div>
+        <div class="sl">About BizBoost Strategies</div>
+        <h2 class="sh">Texas-Based.<br>Early Childhood Focused.</h2>
+        <div class="ab-card" style="margin-top:18px">
+          <p>BizBoost Strategies is a Texas-based quality improvement resource company. We develop practical, classroom-ready materials designed to support child care programs participating in the Texas Rising Star program. Our activities are developed by early childhood and assessment specialists with decades of combined experience in child development, program quality, and TRS certification standards.</p>
+        </div>
+        <div class="cb">
+          <h4>&#128172; Have Other Questions?</h4>
+          <p>For consultation-related inquiries, reach out to our team directly. We typically respond within 48 hours.</p>
+          <a href="mailto:support@bizbooststrategy.com">support@bizbooststrategy.com</a>
+        </div>
+      </div>
+      <div class="ab-stats">
+        <div class="si2"><div class="si2-n">4</div><div class="si2-l">Age groups served &mdash; Infant, Toddler, Pre-K, School-Age</div></div>
+        <div class="si2"><div class="si2-n">6</div><div class="si2-l">Learning themes in rotation &mdash; STEM, Creative, SEL, Language, Physical, Life Skills</div></div>
+        <div class="si2"><div class="si2-n">40%</div><div class="si2-l">of TRS score covered by Category 2: Teacher-Child Interactions</div></div>
+        <div class="si2"><div class="si2-n">5&times;</div><div class="si2-l">Weekly delivery &mdash; every weekday morning, year-round</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact" class="foot">
+  <div class="foot-in">
+    <div class="fd">
+      Disclaimer: BizBoost Strategies is an independent resource provider and is not affiliated with, endorsed by, or partnered with the Texas Workforce Commission, Texas Rising Star, or any Texas state agency. Activities are developed using publicly available TRS assessment standards and AI-assisted content generation with professional review. Our resources are designed to support programs in their quality improvement efforts but do not guarantee specific assessment outcomes or certification results. Centers should review all activities for appropriateness and consult with their TRS mentor or specialist as needed.
+    </div>
+    <div class="fb">
+      <strong>BizBoost Strategies</strong>
+      <a href="https://www.bizbooststrategy.com" target="_blank" rel="noopener noreferrer">www.bizbooststrategy.com</a>
+      <a href="mailto:support@bizbooststrategy.com">support@bizbooststrategy.com</a>
+      <div class="fc">&copy; 2026 BizBoost Strategies. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    const logo=document.querySelector('.nb-logo');
+    if(logo){logo.onerror=function(){this.style.display='none';this.nextElementSibling.style.display='block'}}
+  })();
+</script>
 </body>
 </html>
-
-
-
-
